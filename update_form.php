@@ -5,7 +5,7 @@ $query = "select * from member_join where id=$idx";
 $result = mysqli_query($conn,$query);
 $re = mysqli_fetch_row($result);
 echo "$re[0] $re[1] $re[2] $re[3] $re[4] $re[5] $re[6]";
-$r_update = "select * from"
+$r_update = "select * from";
 
 ?>
 
@@ -27,25 +27,37 @@ $r_update = "select * from"
     <form method="post" action="update.php">
     <div class="form-floating mb-3 col-sm-3">
         <label for="exampleFormControlInput1" class="form-label"></label>
-        Title<input type="title" class="form-control" id="exampleFormControlInput1" name="title" placeholder="title" value="<?php echo $re[1] ?>">
+        id<input type="id" class="form-control" id="exampleFormControlInput1" name="uid" placeholder="title" value="<?php echo $re[1] ?>">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         <label for="exampleFormControlInput1" class="form-label"></label>
-        Writer<input type="writer" class="form-control" id="exampleFormControlInput1" name="writer" placeholder="writer" value="<?php echo $re[2] ?>">
+        password<input type="password" class="form-control" id="exampleFormControlInput1" name="upassword" placeholder="writer" value="<?php echo $re[2] ?>">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         <label for="exampleFormControlInput1" class="form-label"></label>
-        Password<input type="password" class="form-control" id="exampleFormControlInput1" name= "password" placeholder="password" value="<?php echo $re[3] ?>">
+        name<input type="name" class="form-control" id="exampleFormControlInput1" name="uname" placeholder="writer" value="<?php echo $re[3] ?>">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         <label for="exampleFormControlInput1" class="form-label"></label>
-        Email address<input type="email" class="form-control" id="exampleFormControlInput1" name= "email" placeholder="email" value="<?php echo $re[4] ?>">
+        tel<input type="password" class="form-control" id="exampleFormControlInput1" name= "utel" placeholder="tel" value="<?php echo $re[4] ?>">
       </div>
       <div class="form-floating mb-3 col-sm-3">
-        <label for="exampleFormControlTextarea1" class="form-label"></label>
-        Content<textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"><?php echo $re[5] ?></textarea>
+        <label for="exampleFormControlInput1" class="form-label"></label>
+        Email address<input type="email" class="form-control" id="exampleFormControlInput1" name= "uemail" placeholder="email" value="<?php echo $re[5] ?>">
       </div>
-      <input type="hidden" name = "a" value = "<?php echo $re[0] ?>">
+      <div class="form-floating mb-3 col-sm-3">
+            <!-- <label for="exampleFormControlTextarea1" class="form-label"></label> -->
+            <select name="sel" class="form-select" aria-label="Default select example">
+                <option selected>거주지</option>
+                <option value="서울">서울</option>
+                <option value="인천">인천</option>
+                <option value="경기">경기</option>
+                <option value="부산">부산</option>
+                <option value="대구">대구</option>
+                <option value="제주">제주</option>
+            </select>
+        </div>
+        <input type="hidden" name="a" value="<?php echo $re[0]?>">
       <button type="submit" class="btn btn-warning">수정완료</button>
     </form>
   

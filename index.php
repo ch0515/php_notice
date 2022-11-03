@@ -25,8 +25,9 @@ $result = mysqli_query($conn, $query);
 $count = mysqli_num_rows($result);
 for($i = 0; $i < $count; $i++){
     $re = mysqli_fetch_row($result);
-    echo "<tr><td>$re[0]</td><td>$re[2]</td><td>$re[3]</td><td>$re[4]</td><td>$re[5]</td><td>$re[6]</td><td><a href='update_form.php?a=$re[0]'>수정</a> <a href='delete_form.php?b=$re[0]'>삭제</a></td></tr>";
+    echo "<tr><td>$re[0]</td><td>$re[1]</td><td>$re[3]</td><td>$re[4]</td><td>$re[5]</td><td>$re[6]</td><td><a href='update_form.php?a=$re[0]'>수정</a> <a href='delete_form.php?b=$re[0]'>삭제</a></td></tr>";
 }
 
 ?>
 </table>
+<a href="join.html" class="btn btn-success">Write</a>

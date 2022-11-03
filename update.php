@@ -2,26 +2,24 @@
 include('./db_conn.php');
 //디비 접속
 //select 쿼리 날려서
-$uid=$_POST['uid'];
+$uid=$_POST['a'];
 $upassword = $_POST['upassword'];
 $uname = $_POST['uname'];
 $utel = $_POST['utel'];
 $uemail = $_POST['uemail'];
 $sel = $_POST['sel'];
-$query = "select * from member_join where id=$w_idx"; //or "select password from bbs where id=$w_idx";
+$query = "select * from member_join where id=$uid"; //or "select password from bbs where id=$w_idx";
 //mysqli_query()
 $result = mysqli_query($conn, $query);
 $re = mysqli_fetch_row($result);
 //password가 들어있는 배열 방을 출력
 // echo "password".$re[3];
 
-//2. 사용자가 입력한 패스워드 출력
-// echo "사용자 입력 password".$w_password;
 
-//$re[3] 과 $_password가 같으면 수정
-if($re[3] == $w_password){
-    $query = "update bbs set id = '$uid',password = '$upassword',uname = '$uname',tel = '$utel' 
-          where id= $w_idx";
+
+if($re[2] == $upassword){
+    $query = "update member_join set id = '$uid',upassword = '$upassword',uname = '$uname',utel = '$utel',uemail = '$uemail',ucity = '$sel'
+          where id= $uid";
 
 mysqli_query($conn,$query);
 echo "수정되었습니다";
