@@ -7,36 +7,92 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>join.html</title>
+    <script>
+    $(function(){
+      $("#myForm").submit(function(){
+      if($("#uid").val()==""){
+        alert('아이디 입력');
+        $("#uid").focus();
+        return false();
+    }
+    })
+  })
+  $(function(){
+    $("myForm").submit(function(){
+      if($("#upassword").val()==""){
+        alert('비밀번호 입력');
+        $("#upassword").focus();
+        return false();
+      }
+    })
+  })
+  $(function(){
+    $("myForm").submit(function(){
+      if($("#uname").val()==""){
+        alert('이름 입력');
+        $("#uname").focus();
+        return false();
+      }
+    })
+  })
+  $(function(){
+    $("myForm").submit(function(){
+      if($("#utel").val()==""){
+        alert('전화번호 입력');
+        $("#utel").focus();
+        return false();
+      }
+    })
+  })
+  $(function(){
+    $("myForm").submit(function(){
+      if($("#uemail").val()==""){
+        alert('이메일 입력');
+        $("#uemail").focus();
+        return false();
+      }
+    })
+  })
+  $(function(){
+    $("myForm").submit(function(){
+      if($("#sel").val()==""){
+        alert('주소입력');
+        $("#sel").focus();
+        return false();
+      }
+    })
+  })
+    </script>
   </head>
   <body>
     <h1>회원가입</h1>
     <hr/>
-    <form method="post" action="join.php">
+    <form method="post" action="join.php" id="myForm" name="myForm">
     <div class="form-floating mb-3 col-sm-3">
       아이디<label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="id" class="form-control" id="exampleFormControlInput1" name="uid">
+        <input type="id" class="form-control" id="uid" name="uid">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         비밀번호<label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="password" class="form-control" id="exampleFormControlInput1" name="upassword">
+        <input type="password" class="form-control" id="upassword" name="upassword">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         이름<label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" name= "uname">
+        <input type="name" class="form-control" id="uname" name= "uname">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         전화번호<label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="pnum" class="form-control" id="exampleFormControlInput1" name= "utel">
+        <input type="pnum" class="form-control" id="utel" name= "utel">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         이메일<label for="exampleFormControlTextarea1" class="form-label"></label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" name= "uemail">
+        <input type="email" class="form-control" id="uemail" name= "uemail">
       </div>
       <div class="form-floating mb-3 col-sm-3">
         <!-- <label for="exampleFormControlTextarea1" class="form-label"></label> -->
-        거주지<select name="sel" class="form-select" aria-label="Default select example">
+        거주지<select name="sel" class="form-select" aria-label="Default select example" id="sel">
             <option value="서울">서울</option>
             <option value="인천">인천</option>
             <option value="경기">경기</option>
