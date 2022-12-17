@@ -18,7 +18,10 @@ $re = mysqli_fetch_row($result);
 
 
 if($re[2] == $upassword){
-    $query = "update member_join set id = '$uid',upassword = '$upassword',uname = '$uname',utel = '$utel',uemail = '$uemail',ucity = '$sel'
+    $query = "update member_join set id = '$uid',
+            upassword = '$upassword',uname = '$uname',
+            utel = '$utel',uemail = '$uemail',
+            ucity = '$sel'
           where id= $uid";
 
 mysqli_query($conn,$query);
